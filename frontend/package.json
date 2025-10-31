@@ -1,0 +1,12 @@
+{
+  "name": "todo-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for To-Do app (simulates Angular build)",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp -r src/* dist/",
+    "start": "npx serve -s dist -l 4200"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
