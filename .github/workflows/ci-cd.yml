@@ -51,5 +51,4 @@ services:
 networks:
   app-net:
     driver: bridge
-EOF
             docker-compose up -d
