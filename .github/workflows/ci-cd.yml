@@ -43,6 +43,7 @@ jobs:
 
             echo "Updating docker-compose.yml..."
             cat > docker-compose.yml <<EOF
+version: '3.8'
 services:
   backend:
     image: ${{ secrets.DOCKERHUB_USERNAME }}/todo-backend:${{ github.sha }}
@@ -61,7 +62,7 @@ services:
 networks:
   app-net:
     driver: bridge
-    
+EOF
             echo "Starting new containers..."
             docker-compose up -d
 
