@@ -33,7 +33,7 @@ jobs:
           host: ${{ secrets.VM_PUBLIC_IP }}
           username: ${{ secrets.VM_SSH_USER }}
           key: ${{ secrets.VM_SSH_KEY }}
-          script: |
+          script: >
             echo "Pulling new images..."
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/todo-frontend:${{ github.sha }}
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/todo-backend:${{ github.sha }}
@@ -61,7 +61,7 @@ services:
 networks:
   app-net:
     driver: bridge
-EOF
+<<'EOF'
             echo "Starting new containers..."
             docker-compose up -d
 
